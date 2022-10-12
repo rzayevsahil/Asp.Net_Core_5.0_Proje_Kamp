@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
@@ -11,35 +12,35 @@ namespace BusinessLayer.Concrete
 {
     public class BlogManager : IBlogService
     {
-        EfBlogRepository efBlogRepository;
+        IBlogDal _blogDal;
 
-        public BlogManager()
+        public BlogManager(IBlogDal blogDal)
         {
-            efBlogRepository = new EfBlogRepository();
+            _blogDal = blogDal;
         }
         public void TInsert(Blog item)
         {
-            efBlogRepository.Insert(item);
+            _blogDal.Insert(item);
         }
 
         public void TDelete(Blog item)
         {
-            efBlogRepository.Delete(item);
+            _blogDal.Delete(item);
         }
 
         public void TUpdate(Blog item)
         {
-            efBlogRepository.Update(item);
+            _blogDal.Update(item);
         }
 
         public List<Blog> TGetList()
         {
-            return efBlogRepository.GetListAll();
+            return _blogDal.GetListAll();
         }
 
         public Blog TGetByID(int id)
         {
-            return efBlogRepository.GetByID(id);
+            return _blogDal.GetByID(id);
         }
     }
 }

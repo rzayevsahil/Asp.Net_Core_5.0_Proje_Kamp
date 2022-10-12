@@ -4,42 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager : IAboutService
+    public class AboutManager : GenericManager<About>, IAboutService
     {
-        private EfAboutRepository efAboutRepository;
-
-        public AboutManager()
+        public AboutManager(IGenericDal<About> genericDal) : base(genericDal)
         {
-            efAboutRepository = new EfAboutRepository();
-        }
-        public void TInsert(About item)
-        {
-            efAboutRepository.Insert(item);
-        }
-
-        public void TDelete(About item)
-        {
-            efAboutRepository.Delete(item);
-        }
-
-        public void TUpdate(About item)
-        {
-            efAboutRepository.Update(item);
-        }
-
-        public List<About> TGetList()
-        {
-            return efAboutRepository.GetListAll();
-        }
-
-        public About TGetByID(int id)
-        {
-            return efAboutRepository.GetByID(id);
         }
     }
 }

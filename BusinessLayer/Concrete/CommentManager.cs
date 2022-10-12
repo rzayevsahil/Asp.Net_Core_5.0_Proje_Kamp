@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
@@ -11,35 +12,35 @@ namespace BusinessLayer.Concrete
 {
     public class CommentManager : ICommentService
     {
-        private EfCommentRepository efCommentRepository;
+        ICommentDal _commentDal;
 
-        public CommentManager()
+        public CommentManager(ICommentDal commentDal)
         {
-            efCommentRepository = new EfCommentRepository();
+            _commentDal = commentDal;
         }
         public void TInsert(Comment item)
         {
-            efCommentRepository.Insert(item);
+            _commentDal.Insert(item);
         }
 
         public void TDelete(Comment item)
         {
-            efCommentRepository.Delete(item);
+            _commentDal.Delete(item);
         }
 
         public void TUpdate(Comment item)
         {
-            efCommentRepository.Update(item);
+            _commentDal.Update(item);
         }
 
         public List<Comment> TGetList()
         {
-            return efCommentRepository.GetListAll();
+            return _commentDal.GetListAll();
         }
 
         public Comment TGetByID(int id)
         {
-            return efCommentRepository.GetByID(id);
+            return _commentDal.GetByID(id);
         }
     }
 }
