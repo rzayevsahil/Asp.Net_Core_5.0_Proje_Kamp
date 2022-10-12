@@ -7,13 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IWriterService
+    public interface IWriterService : IGenericService<Writer>
     {
-
-        void WriterInsert(Writer writer);
-        void WriterDelete(Writer writer);
-        void WriterUpdate(Writer writer);
-        List<Writer> GetList();
-        Writer GetByID(int id);
     }
 }
