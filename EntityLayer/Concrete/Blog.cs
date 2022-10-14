@@ -10,7 +10,7 @@ namespace EntityLayer.Concrete
     public class Blog
     {
         [Key]
-        public int BlokID { get; set; }
+        public int BlogID { get; set; }
         public string BlogTitle { get; set; }
         public string BlogContent { get; set; }
         public string BlogThumbnailImage { get; set; }
