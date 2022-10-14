@@ -12,5 +12,10 @@ namespace UILayer.Controllers
             var values = blogManager.TGetListWithCategory();
             return View(values);
         }
+
+        public IActionResult BlogDetails(int id)
+        {
+            return View();
+        }
     }
 }

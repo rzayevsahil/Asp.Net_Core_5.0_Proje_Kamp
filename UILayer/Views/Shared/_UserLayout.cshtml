@@ -1,7 +1,6 @@
 ﻿@{
     Layout = null;
 }
-@await Html.PartialAsync("Partial1")
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -112,18 +111,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </nav>
 
         </div>
+        @await Html.PartialAsync("Partial1")
     </header>
     <!--//header-->
-    <!--/banner-->
-    <div class="banner-inner">
-    </div>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Blog3</li>
-    </ol>
-    <!--//banner-->
     <!--/main-->
     @RenderBody()
     <!--//main-->
