@@ -18,6 +18,12 @@ namespace BusinessLayer.Concrete
         {
             _blogDal = blogDal;
         }
+
+        public List<Blog> TGetListWithCategory()
+        {
+            return _blogDal.GetListWithCategory();
+        }
+
         public void TInsert(Blog item)
         {
             _blogDal.Insert(item);

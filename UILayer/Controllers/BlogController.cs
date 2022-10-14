@@ -9,7 +9,7 @@ namespace UILayer.Controllers
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
         public IActionResult Index()
         {
-            var values = blogManager.TGetList();
+            var values = blogManager.TGetListWithCategory();
             return View(values);
         }
     }
