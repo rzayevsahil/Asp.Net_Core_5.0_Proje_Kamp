@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-
 <section class="main-content-w3layouts-agileits">
     <div class="container">
         <h3 class="tittle">Bloglar</h3>
@@ -47,9 +46,9 @@
                                 }
                                 else
                                 {
-                                    <p class="card-text mb-3">@x.BlogContent.Substring(0,100).. </p>
+                                    <p class="card-text mb-3">@x.BlogContent.Substring(0,x.BlogContent.Substring(0,100).LastIndexOf(" ")).. </p>
                                 }
-                                <a href="single.html" class="btn btn-primary read-m">Devamını Oku</a>
+                                <a href="/Blog/BlogDetails/@x.BlogID/" class="btn btn-primary read-m">Devamını Oku</a>
                             </div>
                         </div>
                     }
