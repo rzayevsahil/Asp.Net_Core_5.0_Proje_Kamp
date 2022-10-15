@@ -14,5 +14,9 @@ namespace UILayer.Controllers
             return PartialView();
         }
 
+        public PartialViewResult PartialCommentListByBlog() 
+        {
+            return PartialView();
+        }
     }
 }
