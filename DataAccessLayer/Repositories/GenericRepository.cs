@@ -49,7 +49,7 @@ namespace DataAccessLayer.Repositories
 
         public List<T> GetListAll(Expression<Func<T, bool>> filter)
         {
-            return context.Set<T>().Where(filter).ToList();
+            return filter == null ? _object.ToList() : context.Set<T>().Where(filter).ToList();
         }
     }
 }
