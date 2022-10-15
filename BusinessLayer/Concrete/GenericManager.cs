@@ -37,11 +37,6 @@ namespace BusinessLayer.Concrete
             return _genericDal.GetListAll();
         }
 
-        public List<T> TGetList(Expression<Func<T, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
         public T TGetByID(int id)
         {
             return _genericDal.GetByID(id);
