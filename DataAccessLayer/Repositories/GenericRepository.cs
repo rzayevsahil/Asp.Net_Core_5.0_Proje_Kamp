@@ -37,10 +37,10 @@ namespace DataAccessLayer.Repositories
             context.SaveChanges();
         }
 
-        public List<T> GetListAll()
-        {
-            return _object.ToList();
-        }
+        //public List<T> GetListAll()
+        //{
+        //    return _object.ToList();
+        //}
 
         public T GetByID(int id)
         {
