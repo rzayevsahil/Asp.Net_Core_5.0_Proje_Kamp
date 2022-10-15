@@ -37,10 +37,10 @@ namespace DataAccessLayer.Repositories
             context.SaveChanges();
         }
 
-        //public List<T> GetListAll()
-        //{
-        //    return _object.ToList();
-        //}
+        public List<T> GetListAll()
+        {
+            return _object.ToList();
+        }
 
         public T GetByID(int id)
         {
@@ -49,7 +49,7 @@ namespace DataAccessLayer.Repositories
 
         public List<T> GetListAll(Expression<Func<T, bool>> filter)
         {
-            return filter == null ? _object.ToList() : context.Set<T>().Where(filter).ToList();
+            return context.Set<T>().Where(filter).ToList();
         }
     }
 }

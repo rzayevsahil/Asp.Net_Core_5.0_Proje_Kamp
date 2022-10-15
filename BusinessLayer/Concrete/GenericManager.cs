@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
@@ -34,6 +35,11 @@ namespace BusinessLayer.Concrete
         public List<T> TGetList()
         {
             return _genericDal.GetListAll();
+        }
+
+        public List<T> TGetList(Expression<Func<T, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public T TGetByID(int id)
