@@ -28,17 +28,17 @@
                                     <ul>
                                         <li>
                                             <a href="#">
-                                                <i class="far fa-calendar-alt"></i> FEB 15,2018
+                                                <i class="far fa-calendar-alt"></i> @blog.BlogCreateDate.ToString("dd-MMM-yyyy")
                                             </a>
                                         </li>
                                         <li class="mx-2">
                                             <a href="#">
-                                                <i class="far fa-thumbs-up"></i> 201 Likes
+                                                <i class="far fa-thumbs-up"></i> 0 Beğeni
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <i class="far fa-comment"></i> 15 Comments
+                                                <i class="far fa-comment"></i> 0 Yorum
                                             </a>
                                         </li>
 
@@ -50,11 +50,9 @@
                                 <a href="single.html">@blog.BlogTitle</a>
                             </h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip exea commodo consequat duis
-                                aute irudre dolor in elit sed uta labore dolore reprehender
+                                @blog.BlogContent
                             </p>
-                            <a href="single.html" class="btn btn-primary read-m">Read More</a>
+                            <a href="/Blog/Index/" class="btn btn-primary read-m">Blog Listesi</a>
                         </div>
                     }
                     <div class="comment-top">
