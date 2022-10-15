@@ -47,9 +47,9 @@ namespace DataAccessLayer.Repositories
             return _object.Find(id);
         }
 
-        public List<T> List(Expression<Func<T, bool>> filter)
+        public List<T> GetListAll(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            return context.Set<T>().Where(filter).ToList();
         }
     }
 }
