@@ -10,5 +10,6 @@ namespace BusinessLayer.Abstract
     public interface IBlogService : IGenericService<Blog>
     {
         List<Blog> TGetListWithCategory();
+        List<Blog> GetBlogByID(int id);
     }
 }

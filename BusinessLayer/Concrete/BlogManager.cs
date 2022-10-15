@@ -24,6 +24,11 @@ namespace BusinessLayer.Concrete
             return _blogDal.GetListWithCategory();
         }
 
+        public List<Blog> GetBlogByID(int id)
+        {
+            return _blogDal.GetListAll(x => x.BlogID == id);
+        }
+
         public void TInsert(Blog item)
         {
             _blogDal.Insert(item);
