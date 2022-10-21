@@ -35,7 +35,12 @@ namespace BusinessLayer.Concrete
 
         public List<Comment> TGetList()
         {
-            return _commentDal.GetListAll();
+            throw new NotImplementedException();
+        }
+
+        public List<Comment> TGetList(int id) 
+        {
+            return _commentDal.GetListAll(x => x.BlogID == id);
         }
 
         public Comment TGetByID(int id)
