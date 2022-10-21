@@ -12,11 +12,15 @@ namespace BusinessLayer.Concrete
 {
     public class CategoryManager : GenericManager<Category>, ICategoryService
     {
-        ICategoryDal _categoryDal = new EfCategoryRepository();
-        
-        public CategoryManager(IGenericDal<Category> genericDal) : base(genericDal)
+        ICategoryDal _categoryDal;
+        public CategoryManager(ICategoryDal categoryDal) : base(new EfCategoryRepository())
         {
+            _categoryDal = categoryDal;
         }
+        //public CategoryManager(IGenericDal<Category> genericDal) : base(genericDal)
+        //{
+        //}
+
 
         public List<Category> TGetBlogsCountByCategory()
         {
