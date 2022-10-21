@@ -10,9 +10,7 @@ namespace UILayer.ViewComponents.Category
         CategoryManager categoryManager = new CategoryManager(new EfCategoryRepository());
         public IViewComponentResult Invoke()
         {
-            var blogCount = categoryManager.TGetList().Select(x=>x.Blogs.Count());
-            ViewBag.blogCount = blogCount;
-            var values = categoryManager.TGetList();
+            var values = categoryManager.TGetBlogsCountByCategory();
             return View(values);
         }
     }
