@@ -15,6 +15,7 @@ namespace UILayer.Controllers
 
         public IActionResult BlogReadAll(int id)
         {
+            ViewBag.blogID = id;
             var values = blogManager.GetBlogByID(id);
             return View(values);
         }
