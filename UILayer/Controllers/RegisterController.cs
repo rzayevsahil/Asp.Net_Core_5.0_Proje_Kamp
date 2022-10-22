@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 namespace UILayer.Controllers
 {
@@ -10,7 +11,7 @@ namespace UILayer.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index()
+        public IActionResult Index(Writer writer)
         {
             return View();
         }
