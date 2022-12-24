@@ -10,11 +10,10 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class BlogManager : IBlogService
+    public class BlogManager : GenericManager<Blog>, IBlogService
     {
         IBlogDal _blogDal;
-
-        public BlogManager(IBlogDal blogDal)
+        public BlogManager(IGenericDal<Blog> genericDal, IBlogDal blogDal) : base(genericDal)
         {
             _blogDal = blogDal;
         }
@@ -27,31 +26,6 @@ namespace BusinessLayer.Concrete
         public List<Blog> GetBlogByID(int id)
         {
             return _blogDal.GetListAll(x => x.BlogID == id);
-        }
-
-        public void TInsert(Blog item)
-        {
-            _blogDal.Insert(item);
-        }
-
-        public void TDelete(Blog item)
-        {
-            _blogDal.Delete(item);
-        }
-
-        public void TUpdate(Blog item)
-        {
-            _blogDal.Update(item);
-        }
-
-        public List<Blog> TGetList()
-        {
-            return _blogDal.GetListAll();
-        }
-
-        public Blog TGetByID(int id)
-        {
-            return _blogDal.GetByID(id);
         }
     }
 }

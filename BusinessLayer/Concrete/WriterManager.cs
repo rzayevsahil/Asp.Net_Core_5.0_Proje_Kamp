@@ -10,38 +10,10 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class WriterManager : IWriterService
+    public class WriterManager : GenericManager<Writer>,IWriterService
     {
-        IWriterDal _writerDal;
-
-        public WriterManager(IWriterDal writerDal)
+        public WriterManager(IGenericDal<Writer> genericDal) : base(genericDal)
         {
-            _writerDal = writerDal;
-        }
-
-        public void TInsert(Writer item)
-        {
-            _writerDal.Insert(item);
-        }
-
-        public void TDelete(Writer item)
-        {
-            _writerDal.Delete(item);
-        }
-
-        public void TUpdate(Writer item)
-        {
-            _writerDal.Update(item);
-        }
-
-        public List<Writer> TGetList()
-        {
-            return _writerDal.GetListAll();
-        }
-
-        public Writer TGetByID(int id)
-        {
-            return _writerDal.GetByID(id);
         }
     }
 }

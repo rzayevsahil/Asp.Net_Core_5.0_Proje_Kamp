@@ -10,37 +10,10 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class ContactManager : IContactService
+    public class ContactManager : GenericManager<Contact>, IContactService
     {
-        IContactDal _contactDal;
-
-        public ContactManager(IContactDal contactDal)
+        public ContactManager(IGenericDal<Contact> genericDal) : base(genericDal)
         {
-            _contactDal = contactDal;
-        }
-        public void TInsert(Contact item)
-        {
-            _contactDal.Insert(item);
-        }
-
-        public void TDelete(Contact item)
-        {
-            _contactDal.Delete(item);
-        }
-
-        public void TUpdate(Contact item)
-        {
-            _contactDal.Update(item);
-        }
-
-        public List<Contact> TGetList()
-        {
-            return _contactDal.GetListAll();
-        }
-
-        public Contact TGetByID(int id)
-        {
-            return _contactDal.GetByID(id);
         }
     }
 }
