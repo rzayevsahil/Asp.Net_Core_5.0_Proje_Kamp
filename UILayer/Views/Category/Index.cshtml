@@ -4,22 +4,25 @@
     Layout = null;
 }
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Kategori Adı</th>
-        <th>Durumu</th>
-        <th>Detaylar</th>
-        <th>Sil</th>
-    </tr>
-    @foreach (var x in Model)
-    {
+<div class="container">
+    <br />
+    <table class="table table-bordered">
         <tr>
-            <td>@x.CategoryID</td>
-            <td>@x.CategoryName</td>
-            <td>@x.CategoryStatus</td>
-            <td><a href="#" class="btn btn-warning">Detaylar</a></td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <th>ID</th>
+            <th>Kategori Adı</th>
+            <th>Durumu</th>
+            <th>Detaylar</th>
+            <th>Sil</th>
         </tr>
-    }
-</table>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.CategoryID</td>
+                <td>@x.CategoryName</td>
+                <td>@x.CategoryStatus</td>
+                <td><a href="#" class="btn btn-warning">Detaylar</a></td>
+                <td><a href="#" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div>

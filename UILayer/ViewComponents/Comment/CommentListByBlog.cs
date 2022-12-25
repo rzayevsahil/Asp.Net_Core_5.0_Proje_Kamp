@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,10 +7,15 @@ namespace UILayer.ViewComponents.Comment
 {
     public class CommentListByBlog : ViewComponent
     {
-        CommentManager commentManager = new CommentManager(new EfCommentRepository());
+        ICommentService _commentService;
+        public CommentListByBlog(ICommentService commentService)
+        {
+            _commentService = commentService;
+        }
+
         public IViewComponentResult Invoke(int id)
         {
-            var values = commentManager.TGetList(id);
+            var values = _commentService.TGetList(id);
             return View(values);
         }
     }

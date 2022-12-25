@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
@@ -13,7 +9,7 @@ namespace BusinessLayer.Concrete
     public class CommentManager : GenericManager<Comment>, ICommentService
     {
         ICommentDal _commentDal;
-        public CommentManager(IGenericDal<Comment> genericDal, ICommentDal commentDal) : base(genericDal)
+        public CommentManager(ICommentDal commentDal) : base(new EfCommentRepository())
         {
             _commentDal = commentDal;
         }

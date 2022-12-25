@@ -8,6 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
+using FluentValidation.AspNetCore;
 
 namespace UILayer
 {
@@ -23,6 +28,21 @@ namespace UILayer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IWriterService, WriterManager>();
+            services.AddScoped<IWriterDal, EfWriterRepository>();
+
+            services.AddScoped<IBlogService, BlogManager>();
+            services.AddScoped<IBlogDal, EfBlogRepository>();
+
+            services.AddScoped<ICommentService, CommentManager>();
+            services.AddScoped<ICommentDal, EfCommentRepository>();
+
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICategoryDal, EfCategoryRepository>();
+
+            services.AddScoped<ICityService, CityManager>();
+            services.AddScoped<ICityDal, EfCityRepository>();
+
             services.AddControllersWithViews();
         }
 

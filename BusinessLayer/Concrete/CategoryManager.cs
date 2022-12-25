@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
@@ -13,7 +9,7 @@ namespace BusinessLayer.Concrete
     public class CategoryManager : GenericManager<Category>, ICategoryService
     {
         ICategoryDal _categoryDal;
-        public CategoryManager(IGenericDal<Category> genericDal, ICategoryDal categoryDal) : base(genericDal)
+        public CategoryManager(ICategoryDal categoryDal) : base(new EfCategoryRepository())
         {
             _categoryDal = categoryDal;
         }

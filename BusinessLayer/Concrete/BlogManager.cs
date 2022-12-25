@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
@@ -13,7 +9,7 @@ namespace BusinessLayer.Concrete
     public class BlogManager : GenericManager<Blog>, IBlogService
     {
         IBlogDal _blogDal;
-        public BlogManager(IGenericDal<Blog> genericDal, IBlogDal blogDal) : base(genericDal)
+        public BlogManager(IBlogDal blogDal) : base(new EfBlogRepository())
         {
             _blogDal = blogDal;
         }
@@ -26,6 +22,11 @@ namespace BusinessLayer.Concrete
         public List<Blog> GetBlogByID(int id)
         {
             return _blogDal.GetListAll(x => x.BlogID == id);
+        }
+
+        public List<Blog> GetBlogListByWriter()
+        {
+            return _blogDal.GetListAll(x=>x.)
         }
     }
 }

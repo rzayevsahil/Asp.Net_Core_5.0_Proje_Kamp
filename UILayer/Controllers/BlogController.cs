@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,17 +7,21 @@ namespace UILayer.Controllers
 {
     public class BlogController : Controller
     {
-        BlogManager blogManager = new BlogManager(new EfBlogRepository());
+        IBlogService _blogService;
+        public BlogController(IBlogService blogService)
+        {
+            _blogService = blogService;
+        }
         public IActionResult Index()
         {
-            var values = blogManager.TGetListWithCategory();
+            var values = _blogService.TGetListWithCategory();
             return View(values);
         }
 
         public IActionResult BlogReadAll(int id)
         {
             ViewBag.blogID = id;
-            var values = blogManager.GetBlogByID(id);
+            var values = _blogService.GetBlogByID(id);
             return View(values);
         }
     }

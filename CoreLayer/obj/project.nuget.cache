@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "nfw4NzJZITvo5aT+CZudVGJ/rU8sIUrGvKV72RPrj6PMdVJI8Ts7yaDu6UyVwtgxizmb99LLlsN21D0qNIWFVg==",
+  "dgSpecHash": "sToyIiWUN2CamJMBUQyo/xfxgcBy7qzLdjlQVZjzsNSNNGlrjcxXLSOMMFuWqZYAdBUhQPYkLg6GGjYpfJlqxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sahil Rzayev\\source\\repos\\Youtube_Murat_Yücedağ\\Asp.Net Core 5.0\\CoreLayer\\CoreLayer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sahil Rzayev\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\Sahil Rzayev\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\Sahil Rzayev\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
+    "C:\\Users\\Sahil Rzayev\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

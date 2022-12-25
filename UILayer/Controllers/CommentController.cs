@@ -1,12 +1,20 @@
-﻿using BusinessLayer.Concrete;
+﻿using System;
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UILayer.Controllers
 {
     public class CommentController : Controller
     {
-        CommentManager commentManager = new CommentManager(new EfCommentRepository());
+        private ICommentService _commentService;
+        public CommentController(ICommentService commentService)
+        {
+            _commentService = commentService;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -19,7 +27,7 @@ namespace UILayer.Controllers
 
         public PartialViewResult PartialCommentListByBlog(int id)
         {
-            var values = commentManager.TGetList(id);
+            var values = _commentService.TGetList(id);
             return PartialView(values);
         }
     }
