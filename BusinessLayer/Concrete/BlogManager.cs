@@ -19,14 +19,19 @@ namespace BusinessLayer.Concrete
             return _blogDal.GetListWithCategory();
         }
 
-        public List<Blog> GetBlogByID(int id)
+        public List<Blog> TGetBlogByID(int id)
         {
             return _blogDal.GetListAll(x => x.BlogID == id);
         }
 
-        public List<Blog> GetBlogListByWriter()
+        public List<Blog> TGetBlogListByWriter(int id)
         {
-            return _blogDal.GetListAll(x=>x.)
+            return _blogDal.GetListAll(x => x.WriterID == id);
+        }
+
+        public List<Blog> TGetLastThreeBlogListByWriter(int id)
+        {
+            return _blogDal.GetLastThreeBlogListByWriter(id);
         }
     }
 }

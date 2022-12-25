@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Repositories;
@@ -18,6 +15,14 @@ namespace DataAccessLayer.EntityFramework
             using (var context = new Context())
             {
                 return context.Blogs.Include(b => b.Category).ToList();
+            }
+        }
+
+        public List<Blog> GetLastThreeBlogListByWriter(int id)
+        {
+            using (var context = new Context())
+            {
+                return context.Blogs.OrderByDescending(x => x.BlogCreateDate).Skip(context.Blogs.Count() - 3).ToList();
             }
         }
     }

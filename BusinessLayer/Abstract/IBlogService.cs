@@ -6,7 +6,8 @@ namespace BusinessLayer.Abstract
     public interface IBlogService : IGenericService<Blog>
     {
         List<Blog> TGetListWithCategory();
-        List<Blog> GetBlogByID(int id);
-        List<Blog> GetBlogListByWriter();
+        List<Blog> TGetBlogByID(int id);
+        List<Blog> TGetBlogListByWriter(int id);
+        List<Blog> TGetLastThreeBlogListByWriter(int id);
     }
 }

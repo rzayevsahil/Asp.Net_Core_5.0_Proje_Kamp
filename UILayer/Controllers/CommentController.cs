@@ -1,8 +1,4 @@
-﻿using System;
-using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
-using DataAccessLayer.EntityFramework;
-using EntityLayer.Concrete;
+﻿using BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UILayer.Controllers
